@@ -1,0 +1,76 @@
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.logo-container img {
+    max-height: 130px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-container img {
+        max-height: 100px;
+    }
+}
+
+.titolo-santuario h2 {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family:"Georgia", serif;
+    color: #7a0000; /* richiamo al colore del melograno */
+}
+
+.testo-santuario {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    font-family: "Georgia", serif;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: #222;
+    animation: fadeIn 1s ease-in;
+
+    border: 2px solid #7a0000;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #fffaf5;
+}
+
+.testo-santuario p {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+/* Animazione fade-in */
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(10px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+    .testo-santuario {
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 15px;
+    }
+
+    .titolo-santuario h2 {
+        font-size: 1.5rem;
+    }
+}
