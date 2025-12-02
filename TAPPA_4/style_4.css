@@ -1,20 +1,22 @@
+
 /* Container delle immagini */
 .logo-container {
     display: flex;               /* usa flexbox */
     justify-content: center;     /* centra orizzontalmente */
     align-items: center;         /* centra verticalmente */
-    gap: 20px;                   /* spazio tra le immagini */
+    gap: 10px;                   /* spazio tra le immagini */
     flex-wrap: nowrap;            /* evita che le immagini vadano a capo */
     overflow-x: auto;            /* scroll orizzontale se troppe immagini */
-    padding: 20px;
+    padding: 10px;
     max-width: 100%;
     margin: 0 auto;              /* centra il container */
 }
 
 /* Immagini dentro il container */
 .logo-container img {
-    height: 100px;               /* altezza fissa per uniformità */
-    width: auto;                  /* mantiene proporzioni */
+    flex: 1 1 auto;
+    height: auto;               /* altezza fissa per uniformità */
+    max-width: calc(100% / 5);                  /* mantiene proporzioni */
     display: block;
     object-fit: contain;          /* evita distorsioni */
 }
@@ -40,8 +42,9 @@
     }
 
     .logo-container img {
-        height: 80px;             /* riduce leggermente le immagini */
+        height: auto;             /* riduce leggermente le immagini */
         margin-right: 10px;       /* piccolo spazio tra immagini */
+        max-width: calc(100% / 5);
     }
 }
 
