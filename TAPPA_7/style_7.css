@@ -1,31 +1,47 @@
+/* Container delle immagini */
 .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
+    display: flex;               /* usa flexbox */
+    justify-content: center;     /* centra orizzontalmente */
+    align-items: center;         /* centra verticalmente */
+    gap: 20px;                   /* spazio tra le immagini */
+    flex-wrap: nowrap;            /* evita che le immagini vadano a capo */
+    overflow-x: auto;            /* scroll orizzontale se troppe immagini */
     padding: 20px;
-    flex-wrap: wrap;
-    max-width: 100%;  /* evita overflow */
-    margin: 0 auto;   /* centra il contenitore */
-}
-
-.logo-container img {
-    max-height: 130px;
     max-width: 100%;
-    width: auto;
-    display: block;
+    margin: 0 auto;              /* centra il container */
 }
 
+/* Immagini dentro il container */
+.logo-container img {
+    height: 100px;               /* altezza fissa per uniformità */
+    width: auto;                  /* mantiene proporzioni */
+    display: block;
+    object-fit: contain;          /* evita distorsioni */
+}
+
+/* Scroll bar piacevole per mobile */
+.logo-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.logo-container::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 4px;
+}
+
+.logo-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Media query per smartphone piccoli */
 @media (max-width: 600px) {
     .logo-container {
-        flex-direction: column;
-        gap: 20px;
         padding: 10px;
     }
 
     .logo-container img {
-        max-height: 100px;
-        width: auto;
+        height: 80px;             /* riduce leggermente le immagini */
+        margin-right: 10px;       /* piccolo spazio tra immagini */
     }
 }
 
